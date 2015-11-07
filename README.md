@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+
+     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
+    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
+    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
+    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
+     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
+    ----------------------------------------------------------------- 
+
+
+Hi there! Welcome to Cloud9 IDE!
+
+To get you started, create some files, play with the terminal,
+or visit http://docs.c9.io for our documentation.
+If you want, you can also go watch some training videos at
+http://www.youtube.com/user/c9ide.
+
+Happy coding!
+The Cloud9 IDE team
+=======
 #멍냥몽땅
 
 ##Description
@@ -16,3 +36,4 @@
 
 * index : index 페이지
 * introduction : 서비스 소개용 페이지
+>>>>>>> 64998f3083786580864dfcb695881c950f3401af
