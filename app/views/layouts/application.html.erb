@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>멍냥몽땅</title>
+  
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- Navigation bar -->
+<div class="navbar-fixed">
+  <nav style="background-color: rgb(110, 238, 132);">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">멍냥몽땅</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">프로필</a></li>
+        <li><a href="badges.html">건강수첩</a></li>
+        <li><a href="badges.html">멍냥 스타일</a></li>
+        <li><a href="badges.html">로그인</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="container-fluid">
+  <%= yield %>
+</div>
+
+</body>
+</html>
