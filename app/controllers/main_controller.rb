@@ -6,4 +6,5 @@ class MainController < ApplicationController
   def introduction #서비스 소개 페이지
   end
   
+
 end
