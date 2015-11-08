@@ -25,6 +25,6 @@
   -o-transition: background 0.4s linear;
   transition: background 0.4s linear;
 }
-a:hover {
+.index_menu a:hover {
   background-color: #d1d1d1;
 }

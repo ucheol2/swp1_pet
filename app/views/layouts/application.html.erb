@@ -26,8 +26,13 @@
         <li><a href="/profile/index">프로필</a></li>
         <li><a href="badges.html">건강수첩</a></li>
         <li><a href="/gallery/index">멍냥스타일</a></li>
-        <li><a href=/main/introduction">멍냥몽땅이란?</a></li>
-        <li><a href="badges.html">로그인</a></li>
+        <li><a href="/main/introduction">멍냥몽땅이란?</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "로그아웃", destroy_user_session_path, method="delete" %></li>
+        <% else %>
+          <li><%= link_to "로그인", new_user_session_path %></li>
+          <li><%= link_to "회원가입", new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
