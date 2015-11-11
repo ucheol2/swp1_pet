@@ -29,10 +29,14 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
+      
+    
 
       t.timestamps null: false
     end
+    
+    ## 회원 가입에 새로운 필드 추가
+    add_column :users, :name, :string
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true

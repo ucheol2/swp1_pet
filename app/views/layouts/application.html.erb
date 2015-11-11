@@ -24,12 +24,14 @@
       <a href="/" class="brand-logo">멍냥몽땅</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/profile/index">프로필</a></li>
-        <li><a href="badges.html">건강수첩</a></li>
+        <li><a href="/healthnote/index">건강수첩</a></li>
         <li><a href="/gallery/index">멍냥스타일</a></li>
         <li><a href="/main/introduction">멍냥몽땅이란?</a></li>
 
         <% if user_signed_in? %>
-          <li><%= link_to "로그아웃", destroy_user_session_path, method="delete" %></li>
+          <!-- 회원정보 수정 (비밀번호 변경) 링크 추가 -->
+          <li><a href="/users/edit">회원정보 수정</a></li>
+          <li><%= link_to "로그아웃", destroy_user_session_path, :method => :delete  %></li>
         <% else %>
           <li><%= link_to "로그인", new_user_session_path %></li>
           <li><%= link_to "회원가입", new_user_registration_path %></li>

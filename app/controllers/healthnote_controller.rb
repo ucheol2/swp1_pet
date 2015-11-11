@@ -1,6 +1,9 @@
 class HealthnoteController < ApplicationController
-  
-  def method_name
+      # 건강수첩 페이지가 로그인한 유저에게만 보이도록
+    before_action :authenticate_user!
     
-  end
+    def index #index 페이지
+    end
+  
+
 end
