@@ -5,4 +5,8 @@ class ProfileController < ApplicationController
     def index #index 페이지
     end
     
+    def create_pet
+        Pet.create(user: current_user, name: params[:name], gender: params[:gender], age: params[:age], about: params[:about], img: params[:img])
+    end
+    
 end
