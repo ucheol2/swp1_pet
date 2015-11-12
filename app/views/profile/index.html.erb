@@ -1,12 +1,14 @@
 <%= form_tag "/profile/create_pet", multipart: true %>
+   
    <img src="..." alt="..." class="img-circle">
-   <%=current_user.pets.each do |item| %>
+   <% current_user.pets.each do |item| %>
    <img src="<%= item.img.url %>">
    <%=item.name%>
    <%=item.gender%>
    <%=item.age%>
    <%=item.about%>
    <% end %>
+   
    <div class="form-group">
     <label for="profile_picture">프로필 사진 업로드</label>
     <input type="file" id="profile_picture" name="img">
