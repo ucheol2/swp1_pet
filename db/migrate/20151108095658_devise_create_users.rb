@@ -35,12 +35,12 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.timestamps null: false
     end
     
-    ## 회원 가입에 새로운 필드 추가
-    add_column :users, :name, :string
+    # ## 회원 가입에 새로운 필드 추가
+    # add_column :users, :name, :string
 
-    add_index :users, :email,                unique: true
-    add_index :users, :reset_password_token, unique: true
-    # add_index :users, :confirmation_token,   unique: true
-    # add_index :users, :unlock_token,         unique: true
+    # add_index :users, :email,                unique: true
+    # add_index :users, :reset_password_token, unique: true
+    # # add_index :users, :confirmation_token,   unique: true
+    # # add_index :users, :unlock_token,         unique: true
   end
 end

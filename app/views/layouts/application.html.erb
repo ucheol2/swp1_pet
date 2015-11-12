@@ -30,7 +30,7 @@
 
         <% if user_signed_in? %>
           <!-- 회원정보 수정 (비밀번호 변경) 링크 추가 -->
-          <li><a href="/users/edit">회원정보 수정</a></li>
+          <li><%= link_to "회원정보 수정", edit_user_registration_path%></li>
           <li><%= link_to "로그아웃", destroy_user_session_path, :method => :delete  %></li>
         <% else %>
           <li><%= link_to "로그인", new_user_session_path %></li>
