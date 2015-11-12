@@ -7,6 +7,7 @@ class ProfileController < ApplicationController
     
     def create_pet
         Pet.create(user: current_user, name: params[:name], gender: params[:gender], age: params[:age], about: params[:about], img: params[:img])
+        redirect_to :back
     end
     
 end
