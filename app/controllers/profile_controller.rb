@@ -3,6 +3,16 @@ class ProfileController < ApplicationController
     before_action :authenticate_user!
     
     def index #index 페이지
+        unless current_user.pets.empty?
+            redirect_to '/profile/profile'
+        end
+    
+    end
+    
+    def create #create 페이지
+    end
+    
+    def profile #read 페이지
     end
     
     def create_pet
