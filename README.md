@@ -1,6 +1,3 @@
-
-=======
-=======
 #멍냥몽땅
 
 ##Description
@@ -18,8 +15,4 @@
 #####In main controller
 
 * index : index 페이지
-<<<<<<< HEAD
 * introduction : 서비스 소개용 페이지
-=======
-* introduction : 서비스 소개용 페이지
->>>>>>> 413bcfcc84f4fa8825f40eb37d6162f014465324
