@@ -22,12 +22,13 @@
   <nav style="background-color: rgb(110, 238, 132);">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">멍냥몽땅</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
+        <li><a href="/"><i class="material-icons">home</i></a></li>
         <li><a href="/profile/index">프로필</a></li>
         <li><a href="/healthnote/index">건강수첩</a></li>
         <li><a href="/gallery/index">멍냥스타일</a></li>
         <li><a href="/main/introduction">멍냥몽땅이란?</a></li>
-
         <% if user_signed_in? %>
           <!-- 회원정보 수정 (비밀번호 변경) 링크 추가 -->
           <li><%= link_to "회원정보 수정", edit_user_registration_path%></li>
@@ -36,7 +37,21 @@
           <li><%= link_to "로그인", new_user_session_path %></li>
           <li><%= link_to "회원가입", new_user_registration_path %></li>
         <% end %>
-
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile/index">프로필</a></li>
+        <li><a href="/healthnote/index">건강수첩</a></li>
+        <li><a href="/gallery/index">멍냥스타일</a></li>
+        <li><a href="/main/introduction">멍냥몽땅이란?</a></li>
+        <% if user_signed_in? %>
+          <!-- 회원정보 수정 (비밀번호 변경) 링크 추가 -->
+          <li><%= link_to "회원정보 수정", edit_user_registration_path%></li>
+          <li><%= link_to "로그아웃", destroy_user_session_path, :method => :delete  %></li>
+        <% else %>
+          <li><%= link_to "로그인", new_user_session_path %></li>
+          <li><%= link_to "회원가입", new_user_registration_path %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
@@ -45,6 +60,12 @@
 <div class="container-fluid">
   <%= yield %>
 </div>
+
+<script>
+$( document ).ready(function(){
+  $(".button-collapse").sideNav();
+});
+</script>
 
 </body>
 </html>
