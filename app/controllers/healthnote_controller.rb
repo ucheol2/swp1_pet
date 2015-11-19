@@ -3,6 +3,7 @@ class HealthnoteController < ApplicationController
     before_action :authenticate_user!
     
     def index #index 페이지
+        @healthnote = Healthnote.all
     end
   
 

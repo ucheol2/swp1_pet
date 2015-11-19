@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112062845) do
+ActiveRecord::Schema.define(version: 20151119041413) do
+
+  create_table "healthnotes", force: :cascade do |t|
+    t.integer  "order"
+    t.string   "content"
+    t.string   "date"
+    t.string   "hospital"
+    t.string   "etc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pets", force: :cascade do |t|
     t.integer  "user_id"
