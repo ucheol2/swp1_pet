@@ -1,0 +1,10 @@
+<% current_user.pets.each do |item| %>
+<img src="<%= item.img.url %>">
+<h5>이름: <%=item.name%></h5><br>
+<h5>성별: <%=item.gender%></h5><br>
+<h5>나이: <%=item.age%></h5><br>
+<h5>소개 :<%=item.about%></h5><br>
+<button>수정하기</button>
+<% end %>
+
+<a href="/profile/create"><button>나의 멍냥 추가하기</button></a>
