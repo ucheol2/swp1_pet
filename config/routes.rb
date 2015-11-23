@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
   get ':controller(/:action(/:id))'
   post ':controller(/:action(/:id))'
+  get '/healthnote/input' => 'healthnote#input'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
