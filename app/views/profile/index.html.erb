@@ -1,17 +1,14 @@
-<script src="/assets/Chart.min.js"></script>
-
 <%= form_tag "/profile/create_pet", multipart: true %>
+  <img src="..." alt="..." class="img-circle">
+  <% current_user.pets.each do |item| %>
+  <img src="<%= item.img.url %>">
+  <%=item.name%>
+  <%=item.gender%>
+  <%=item.age%>
+  <%=item.about%>
+  <% end %>
    
-   <img src="..." alt="..." class="img-circle">
-   <% current_user.pets.each do |item| %>
-   <img src="<%= item.img.url %>">
-   <%=item.name%>
-   <%=item.gender%>
-   <%=item.age%>
-   <%=item.about%>
-   <% end %>
-   
-   <div class="form-group">
+  <div class="form-group">
     <label for="profile_picture">프로필 사진 업로드</label>
     <input type="file" id="profile_picture" name="img">
     <p class="help-block">멍냥이 프로필 사진을 업로드해주세요~^^</p>
@@ -24,15 +21,15 @@
   </div>
 
   <div class="form-group">
-      <label for="exampleInputGender">성별</label><br>    
-      <input name="gender" type="radio" id="type1" />
-      <label for="type1">여</label>
-      <input name="gender" type="radio" id="type2" />
-      <label for="type2">남</label>
-      <input name="gender" type="radio" id="type3" />
-      <label for="type3">중성화(여)</label>
-      <input name="gender" type="radio" id="type4" />
-      <label for="type4">중성화(남)</label>
+    <label for="exampleInputGender">성별</label><br>    
+    <input name="gender" type="radio" id="type1" />
+    <label for="type1">여</label>
+    <input name="gender" type="radio" id="type2" />
+    <label for="type2">남</label>
+    <input name="gender" type="radio" id="type3" />
+    <label for="type3">중성화(여)</label>
+    <input name="gender" type="radio" id="type4" />
+    <label for="type4">중성화(남)</label>
   </div>
   
   <div class="form-group">
@@ -44,50 +41,7 @@
     <label for="introduction">멍냥소개</label>
     <textarea class="form-control" name="about" rows="5"></textarea>
   </div>
- 
-
-<button type="submit" class="btn btn-default">저장</button>
-    
+  
+  <button type="submit" class="btn btn-default">저장</button>
 
 </form>
-
-<div style="width:30%">
-	<div>
-		<canvas id="canvas" height="450" width="600"></canvas>
-	</div>
-</div>
-
-<script>
-	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-	var lineChartData = {
-		labels : ["January","February","March","April","May","June","July"],
-		datasets : [
-			{
-				label: "My First dataset",
-				fillColor : "rgba(220,220,220,0.2)",
-				strokeColor : "rgba(220,220,220,1)",
-				pointColor : "rgba(220,220,220,1)",
-				pointStrokeColor : "#fff",
-				pointHighlightFill : "#fff",
-				pointHighlightStroke : "rgba(220,220,220,1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-			},
-			{
-				label: "My Second dataset",
-				fillColor : "rgba(151,187,205,0.2)",
-				strokeColor : "rgba(151,187,205,1)",
-				pointColor : "rgba(151,187,205,1)",
-				pointStrokeColor : "#fff",
-				pointHighlightFill : "#fff",
-				pointHighlightStroke : "rgba(151,187,205,1)",
-				data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-			}
-		]
-	}
-window.onload = function(){
-	var ctx = document.getElementById("canvas").getContext("2d");
-	window.myLine = new Chart(ctx).Line(lineChartData, {
-		responsive: true
-	});
-}
-</script>

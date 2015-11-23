@@ -28,3 +28,9 @@
 .index_menu a:hover {
   background-color: #d1d1d1;
 }
+
+.devise_block {
+  background-color: rgba(76, 175, 102, 0.29);
+  padding: 2em;
+  border-radius: 1em;
+}
