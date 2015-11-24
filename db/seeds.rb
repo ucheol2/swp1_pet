@@ -8,3 +8,4 @@
 
 User.create(name: "유철", email: "cokr3430@gmail.com", password: "12341234", password_confirmation: "12341234")
 User.create(name: "배윤", email: "bae.yoon@gmail.com", password: "12344321", password_confirmation: "12344321")
+User.create(name: "이예린", email: "skant121@nate.com", password: "12341234", password_confirmation: "12341234")
