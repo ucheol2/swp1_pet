@@ -21,6 +21,8 @@
           <td><%= item.date %></td>
           <td><%= item.hospital %></td>
           <td><%= item.etc %></td>
+          <td><%= link_to 'X', "/healthnote/delete/" + item.id.to_s, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
+          <td><a href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
         </tr>  
       <% end %>
       <tr>
@@ -29,8 +31,12 @@
         <td>2015.11.11</td>
         <td>와우 동물병원</td>
         <td></td>
+        <td></td>        
       </tr>
     </tbody>
   </table>
             
  
+<br></br>
+
+<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
