@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GalleryControllerTest < ActionController::TestCase
+class HealthnoteTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

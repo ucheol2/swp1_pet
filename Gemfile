@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'carrierwave'
 gem 'fog'
+gem 'figaro'
 
 gem 'wombat'
 

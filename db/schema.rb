@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20151119041430) do
 
+  create_table "healthnotes", force: :cascade do |t|
+    t.integer  "order"
+    t.string   "content"
+    t.string   "date"
+    t.string   "hospital"
+    t.string   "etc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pets", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
