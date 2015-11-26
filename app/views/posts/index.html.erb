@@ -1,8 +1,14 @@
+<div class="row">
+<div class="col s10 offset-s1"
+
 <p id="notice"><%= notice %></p>
 
-<h3>Photo list<hr><%= link_to '등록하기', new_post_path %></h3>
-<hr>
-<table>
+<h3 class="center-align">Photo list</h3>
+<br>
+<h4 class="right-align"><%= link_to '등록하기', new_post_path %></h4>
+<br>
+
+<table class="centered, striped">
   <thead>
     <tr>
       <th>제목</th>
@@ -19,7 +25,7 @@
         
         <td><%= post.title %></td>
         <td><%= post.content %></td>
-        <td><img style="height:100px" src="<%= post.img %>"></td>
+        <td><img class="responsive-img" style="height:100px" src="<%= post.img %>"></td>
         <td><%= post.name %></td>
       
         <td><%= link_to '내용 보기', post %></td>
@@ -32,4 +38,4 @@
 
 <br>
 
-
+</div></div>

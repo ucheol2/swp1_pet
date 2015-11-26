@@ -1,6 +1,12 @@
-<h1>수정하기</h1>
+<h3 class="center-align">수정하기</h3>
+<br>
 
-<%= render 'form' %>
+<%= render 'form'%>
 
-<%= link_to '게시물 보기', @post %> |
-<%= link_to '목록으로', posts_path %>
+
+<br>
+
+<div class="center-align">
+<a class="waves-effect waves-light btn"<%= link_to '내용 보기', @post %>
+<a class="waves-effect waves-light btn"<%= link_to '목록으로', posts_path %>
+</div>

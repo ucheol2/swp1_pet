@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20151126040055) do
 
   create_table "healthnotes", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "order"
     t.string   "content"
     t.string   "date"

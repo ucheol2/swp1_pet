@@ -1,11 +1,28 @@
-<h3>멍냥스타일<hr><%= link_to "등록/관리하기", posts_path %></h3>
-<hr>
+<div class="row">
+<div class="col s10 offset-s1">
 
-<% Post.take(10).each do |p| %>
+<h3 class="center-align">멍냥스타일</h3>
+<hr>
+<h4 class="right-align"><%= link_to "등록/관리하기", posts_path %></h4>
+<br>
+
+<div class="grid">
+<div class="grid-item">
+
+ <% Post.take(10).each do |p| %>
     <div class="style-post">
         <img class='style-image' src="<%= p.img %>">
     </div>
 <% end %>
 
+</div></div>
 
+</div></div>
 
+<script>
+    minigrid({
+  container: '.grid',
+  item: '.grid-item',
+  gutter: 6
+});
+</script>

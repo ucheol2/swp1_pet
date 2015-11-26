@@ -1,36 +1,33 @@
 <h3>멍냥 진료 및 치료 기록을 입력해주세요.</h3>
-
-  <div class="row">
-    <form action="/healthnote/create" class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">add</i>
-          <input id="icon_prefix" name="order" type="intger" class="validate">
-          <label for="icon_prefix">번호</label>
-        </div>  
-        <div class="input-field col s6">
-          <i class="material-icons prefix">pets</i>
-          <input id="icon_prefix" name="content" type="text" class="validate">
-          <label for="icon_prefix">진료내용</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">today</i>
-          <input id="icon_telephone" name="date" type="tel" class="validate">
-          <label for="icon_telephone">날짜</label>
-        </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">local_hospital</i>
-          <input id="icon_telephone" name="hospital" type="tel" class="validate">
-          <label for="icon_telephone">동물병원</label>
-        </div>  
-        <div class="input-field col s6">
-          <i class="material-icons prefix">mode_edit</i>
-          <input id="icon_telephone" name="etc" type="tel" class="validate">
-          <label for="icon_telephone">비고</label>
-         </div>
-        </div>
+<div class="row">
+  <form action="/healthnote/create" class="col s12">
+    <div class="row">
+      <div class="input-field col s6">
+        <i class="material-icons prefix">pets</i>
+        <input id="icon_prefix" name="content" type="text" class="validate">
+        <label for="icon_prefix">진료내용</label>
       </div>
       <button class="btn waves-effect waves-light" type="submit" name="action">저장<i class="material-icons left">pets</i></button>
     </form>
   </div>
   
+      <div class="input-field col s6">
+        <i class="material-icons prefix">today</i>
+        <input id="icon_telephone" name="date" type="tel" class="validate">
+        <label for="icon_telephone">날짜</label>
+      </div>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">local_hospital</i>
+        <input id="icon_telephone" name="hospital" type="tel" class="validate">
+        <label for="icon_telephone">동물병원</label>
+      </div>  
+      <div class="input-field col s6">
+        <i class="material-icons prefix">mode_edit</i>
+        <input id="icon_telephone" name="etc" type="tel" class="validate">
+        <label for="icon_telephone">비고</label>
+       </div>
+      </div>
+    </div>
+    <button class="btn waves-effect waves-light" type="submit" name="action">저장<i class="material-icons left">pets</i></button>
+  </form>
+</div>
