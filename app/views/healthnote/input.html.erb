@@ -1,13 +1,8 @@
 <h3>멍냥 진료 및 치료 기록을 입력해주세요.</h3>
-
   <div class="row">
     <form action="/healthnote/create" class="col s12">
+      <input name="order" type="hidden" value="<%= current_user.pets.count + 1 %>">
       <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">add</i>
-          <input id="icon_prefix" name="order" type="intger" class="validate">
-          <label for="icon_prefix">번호</label>
-        </div>  
         <div class="input-field col s6">
           <i class="material-icons prefix">pets</i>
           <input id="icon_prefix" name="content" type="text" class="validate">
