@@ -31,6 +31,13 @@ class ProfileController < ApplicationController
         pp.about = params[:about]
         pp.img =params[:img]
         pp.save
+        redirect_to '/profile/pet_list'
     end
+    
+    def destroy
+        pp = Pet.find(params[:id].to_i)
+        pp.destroy
+        redirect_to '/profile/pet_list'
+    end    
     
 end
