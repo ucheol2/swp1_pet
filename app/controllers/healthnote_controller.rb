@@ -16,6 +16,11 @@ class HealthnoteController < ApplicationController
     
     def delete
         Healthnote.find(params[:id].to_i).destroy
+        i = 1
+        Healthnote.all.each do |item|
+            item.update(order: i)
+            i = i + 1;
+        end
         redirect_to "/healthnote/index"
     end
 
