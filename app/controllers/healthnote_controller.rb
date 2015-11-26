@@ -8,6 +8,26 @@ class HealthnoteController < ApplicationController
     
     def input #건강 수첩 내용 작성 페이지
     end
+    
+    def create
+        Healthnote.create(order: params[:order], content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
+        redirect_to "/healthnote/index"
+    end
+    
+    def delete
+        Healthnote.find(params[:id].to_i).destroy
+        redirect_to "/healthnote/index"
+    end
+
+    def edit
+        @Healthnote=Healthnote.find(params[:id].to_i)
+    end
+    
+    def update
+        Healthnote.update(order: params[:order], content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
+        redirect_to "/healthnote/index"
+    end
   
+
 
 end
