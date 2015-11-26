@@ -19,4 +19,18 @@ class ProfileController < ApplicationController
         redirect_to '/profile/pet_list'
     end
     
+    def edit
+        @pet = Pet.find(params[:id].to_i)
+    end
+    
+    def update
+        pp = Pet.find(params[:id])
+        pp.name = params[:name]
+        pp.gender = params[:gender]
+        pp.age = params[:age]
+        pp.about = params[:about]
+        pp.img =params[:img]
+        pp.save
+    end
+    
 end
