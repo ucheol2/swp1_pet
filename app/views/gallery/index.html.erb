@@ -1,5 +1,8 @@
-<h3>멍냥스타일<hr><%= link_to "등록/관리하기", posts_path %></h3>
+<h3 class="center-align">멍냥스타일</h3>
 <hr>
+<h4 class="right-align"><%= link_to "등록/관리하기", posts_path %></h4>
+<br>
+
 
 <% Post.take(10).each do |p| %>
     <div class="style-post">
