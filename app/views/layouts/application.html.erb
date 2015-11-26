@@ -19,16 +19,16 @@
 
 <!-- Navigation bar -->
 <div class="navbar-fixed">
-  <nav style="background-color: rgb(110, 238, 132);">
+  <nav style="background-color: rgb(244, 196, 202);">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">멍냥몽땅</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="/"><i class="material-icons">home</i></a></li>
-        <li><a href="/profile/index">프로필</a></li>
-        <li><a href="/healthnote/index">건강수첩</a></li>
-        <li><a href="/gallery/index">멍냥스타일</a></li>
-        <li><a href="/main/introduction">멍냥몽땅이란?</a></li>
+        <li id="home"><a href="/"><i class="material-icons">home</i></a></li>
+        <li id="profile"><a href="/profile/index">프로필</a></li>
+        <li id="healthnote"><a href="/healthnote/index">건강수첩</a></li>
+        <li id="gallery"><a href="/gallery/index">멍냥스타일</a></li>
+        <li id="introduction"><a href="/main/introduction">멍냥몽땅이란?</a></li>
         <% if user_signed_in? %>
           <!-- 회원정보 수정 (비밀번호 변경) 링크 추가 -->
           <li><%= link_to "회원정보 수정", edit_user_registration_path%></li>
@@ -65,6 +65,21 @@
 <script>
 $( document ).ready(function(){
   $(".button-collapse").sideNav();
+  
+  <% case params[:controller] %>
+  <% when "main" %>
+    <% if params[:action] == "introduction" %>
+      $("#introduction").css("background-color", "rgba(0,0,0,0.3)");
+    <% else %>
+      $("#home").css("background-color", "rgba(0,0,0,0.3)");
+    <% end %>
+  <% when "profile" %>
+    $("#profile").css("background-color", "rgba(0,0,0,0.3)");
+  <% when "healthnote" %>
+    $("#healthnote").css("background-color", "rgba(0,0,0,0.3)");
+  <% when "gallery" %>
+    $("#gallery").css("background-color", "rgba(0,0,0,0.3)");
+  <% end %>
 });
 </script>
 
