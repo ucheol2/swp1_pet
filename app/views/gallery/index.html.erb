@@ -1,4 +1,19 @@
 <h3>멍냥스타일</h3>
 
+<% i = 1 %>
+<% Post.take(10).each do |p| %>
+    <% if (i%4 == 1) %>
+        <!--div class="style-wrpper"-->
+    <% %>
+    <div class="style-post">
+        <img class='style-image' src="<%= p.img %>">
+    </div>
+    <% if (i%4 == 0) %>
+        <br>
+        <!--/div>
+    <% end %>
+    <% i = i + 1 %>
+<% end %>
+
 <%= link_to "게시물 보기", posts_path %>
 
