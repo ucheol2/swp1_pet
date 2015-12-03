@@ -7,7 +7,23 @@
     <a href="/profile/create" class="btn">작성하러 가기</a>
   </div>
 <% else %>
-  <%= @my_pets.inspect %>
+  <div class="row">
+    <% @my_pets.each do |item| %>
+      <a href="/healthnote/note_detail/<%= item.id %>">
+        <div class="col s12 m6">
+          <div class="card" style="margin: 2rem;">
+            <div class="card-image">
+              <img src="<%= item.img.url %>">
+              <span class="card-title" style="background-color: rgba(0,0,0,0.8); margin: 1rem; border-radius: 1em; padding: 0.3rem 2rem;"><%= item.name %></span>
+            </div>
+            <div class="card-content black-text">
+              <p><%= item.about %></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
 <% end %>
 
 

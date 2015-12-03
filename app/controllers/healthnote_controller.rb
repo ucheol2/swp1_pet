@@ -1,11 +1,12 @@
 class HealthnoteController < ApplicationController
       # 건강수첩 페이지가 로그인한 유저에게만 보이도록
     before_action :authenticate_user!
+<<<<<<< HEAD
     
     def index #index 페이지 # 진료기록 검색기능 추가
         @my_pets = current_user.pets
     end
-
+    
     def index #index 페이지
         @my_pets = current_user.pets
     end
@@ -14,7 +15,7 @@ class HealthnoteController < ApplicationController
     end
     
     def create
-        Healthnote.create(user: current_user, order: current_user.healthnotes.count+1, content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
+        Healthnote.create(pet: Pet.find(params[:id].to_i), order: current_user.healthnotes.count+1, content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
         redirect_to "/healthnote/index"
     end
     
@@ -42,16 +43,19 @@ class HealthnoteController < ApplicationController
     end
     
     def note_detail
-        if params[:irum]
-           @healthnote = []
-           Healthnote.all.each do |item|
-               if item.content.include? params[:irum] 
-                   @healthnote << item
-               end
-           end
+        if Pet.find(params[:id].to_i).user != current_user
+            redirect_to :back
         else
-            @healthnote = Healthnote.all
+            if params[:irum]
+                @healthnote = []
+                Healthnote.all.each do |item|
+                if item.content.include? params[:irum] 
+                    @healthnote << item
+                end
+            end
+            else
+                @healthnote = Pet.find(params[:id].to_i).healthnotes
+            end 
         end
     end
 end
-
