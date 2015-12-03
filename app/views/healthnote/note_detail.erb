@@ -22,10 +22,14 @@
     <% end %>
   </tbody>
 </table>
+
+<br></br>
+
+<a class="waves-effect waves-light btn" href="/healthnote/input/<%= params[:id] %>"><i class="material-icons left">pets</i>추가</a>
+
 <br></br>
 
 <form action='/healthnote/index'>
-    <input type="text" name="irum" placeholder="검색"><a class="btn-flat">검색</a>
+    <input type="text" name="irum" placeholder="검색어를 입력하세요."><a class="waves-effect waves-light btn"><i class="material-icons left">search</i>검색</a>
 </form>
 
-<a class="waves-effect waves-light btn" href="/healthnote/input/<%= params[:id] %>"><i class="material-icons left">pets</i>추가</a>
