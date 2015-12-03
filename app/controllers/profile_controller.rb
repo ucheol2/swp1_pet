@@ -6,10 +6,10 @@ class ProfileController < ApplicationController
         if current_user.pets.count > 0    
             redirect_to '/profile/pet_list'
         end
-        
     end
     
     def create #create 페이지
+        @prev_uri = request.referrer
     end
     
     def pet_list #pet_list 페이지
@@ -17,7 +17,7 @@ class ProfileController < ApplicationController
     
     def create_pet
         Pet.create(user: current_user, name: params[:name], gender: params[:gender], age: params[:age], about: params[:about], img: params[:img])
-        redirect_to '/profile/pet_list'
+        redirect_to params[:prev_uri]
     end
     
     def edit

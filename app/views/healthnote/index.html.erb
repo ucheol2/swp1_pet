@@ -1,6 +1,7 @@
 <h2>건강 수첩</h2>
 
 <h4>멍냥 의료정보에 대해서 기록해주세요.</h4>
+<<<<<<< HEAD
 
   <table class="responsive-table bordered highlight">
     <thead>
@@ -89,3 +90,12 @@ $( document ).ready(function(){
 });
 </script>
 -->
+=======
+<% if current_user.pets.empty? %>
+  <div class="center" style="margin: 6rem;">
+    <h1>건강 수첩은 멍냥 프로필을 작성 후 사용하실 수 있습니다</h1>
+    <a href="/profile/create" class="btn">작성하러 가기</a>
+  </div>
+<% else %>
+  <%= @my_pets.inspect %>
+<% end %>

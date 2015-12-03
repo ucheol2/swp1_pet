@@ -4,7 +4,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
-
+gem 'materialize-sass'
 gem 'wombat'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
