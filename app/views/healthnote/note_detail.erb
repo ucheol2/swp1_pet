@@ -1,0 +1,35 @@
+<table class="responsive-table bordered highlight">
+  <thead>
+    <tr>
+      <th data-field="id">번호</th>
+      <th data-field="name">내용</th>
+      <th data-field="date">날짜</th>
+      <th data-field="hospital">동물병원</th>
+      <th data-field="etc">비고</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @healthnote.each do |item| %>
+      <tr>
+        <td><%= item.order %></td>
+        <td><%= item.content %></td>
+        <td><%= item.date %></td>
+        <td><%= item.hospital %></td>
+        <td><%= item.etc %></td>
+        <td><%= link_to 'X', "/healthnote/delete/" + item.id.to_s, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
+        <td><a href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
+      </tr>  
+    <% end %>
+  </tbody>
+</table>
+
+<br></br>
+
+<a class="waves-effect waves-light btn" href="/healthnote/input/<%= params[:id] %>"><i class="material-icons left">pets</i>추가</a>
+
+<br></br>
+
+<form action='/healthnote/index'>
+    <input type="text" name="irum" placeholder="검색어를 입력하세요."><a class="waves-effect waves-light btn"><i class="material-icons left">search</i>검색</a>
+</form>
+

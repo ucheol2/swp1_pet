@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   
   has_many :pets
-  has_many :healthnotes
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

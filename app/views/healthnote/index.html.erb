@@ -1,98 +1,33 @@
 <h2>건강 수첩</h2>
 
 <h4>멍냥 의료정보에 대해서 기록해주세요.</h4>
-
-  <table class="responsive-table bordered highlight">
-    <thead>
-      <tr>
-        <th data-field="id">번호</th>
-        <th data-field="name">내용</th>
-        <th data-field="date">날짜</th>
-        <th data-field="hospital">동물병원</th>
-        <th data-field="etc">비고</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @healthnote.each do |item| %>
-        <tr>
-          <td><%= item.order %></td>
-          <td><%= item.content %></td>
-          <td><%= item.date %></td>
-          <td><%= item.hospital %></td>
-          <td><%= item.etc %></td>
-          <td><%= link_to 'X', "/healthnote/delete/" + item.id.to_s, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
-          <td><a href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
-        </tr>  
-      <% end %>
-<<<<<<< HEAD
-      <tr>
-        <td>1</td>
-        <td>심장사상충 예방접종</td>
-        <td>2015.11.11</td>
-        <td>와우 동물병원</td>
-        <td>아파요</td>
-        <td></td>        
-        <td></td>        
-        </tr>
-=======
->>>>>>> 9362475b21408acef4b2fc6e3c51fd7243567d1b
-    </tbody>
-  </table>
-<br></br>
-
-<<<<<<< HEAD
-<form action='/healthnote/index'>
-    <input type="text" name="irum" placeholder="검색"><a class="btn-flat">검색</a>
-</form>
-
-<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
-
-=======
-<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
-
-<!-- 그래프 폐기
-<div class="row">
-  <div class="col s12 l10 offset-l1">
-    <canvas id="myChart" style="width: 100%;"></canvas>
+<% if current_user.pets.empty? %>
+  <div class="center" style="margin: 6rem;">
+    <h1>건강 수첩은 멍냥 프로필을 작성 후 사용하실 수 있습니다</h1>
+    <a href="/profile/create" class="btn">작성하러 가기</a>
   </div>
-</div>
+<% else %>
+  <div class="row">
+    <% @my_pets.each do |item| %>
+      <a href="/healthnote/note_detail/<%= item.id %>">
+        <div class="col s12 m6">
+          <div class="card" style="margin: 2rem;">
+            <div class="card-image">
+              <img src="<%= item.img.url %>">
+              <span class="card-title" style="background-color: rgba(0,0,0,0.8); margin: 1rem; border-radius: 1em; padding: 0.3rem 2rem;"><%= item.name %></span>
+            </div>
+            <div class="card-content black-text">
+              <p><%= item.about %></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+<% end %>
 
-<script>
-$( document ).ready(function(){
-  // Get the context of the canvas element we want to select
-  var ctx = $("#myChart").get(0).getContext("2d");
-  // This will get the first returned node in the jQuery collection.
-  var myLineChart = new Chart(ctx);
-  
-  var data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "My First dataset",
-        fillColor: "rgba(220,220,220,0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [65, 59, 80, 81, 56, 55, 40]
-      },
-      {
-        label: "My Second dataset",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        data: [28, 48, 40, 19, 86, 27, 90]
-      }
-    ]
-  };
-  
-  var options;
-  new Chart(ctx).Line(data, options);
-});
-</script>
--->
->>>>>>> 9362475b21408acef4b2fc6e3c51fd7243567d1b
+
+<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
+<a class="waves-effect waves-light btn" href="/healthnote/note"><i class="material-icons left">pets</i>테스트</a>
+
+
