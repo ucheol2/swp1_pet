@@ -27,12 +27,12 @@ $accent-color: color("pink", "accent-r")!default;
 /*** Forms ***/
 // Text Inputs + Textarea
 
-$input-border-color: color("grey", "base") !default;
+$input-border-color: color("grey", "darken-1") !default;
 $input-bg-color: #fff !default;
 $input-error-color: $error-color !default;
 $input-success-color: $success-color !default;
 $input-focus-color: $secondary-color !default;
-$label-font-size: .8rem !default;
+$label-font-size: 1rem !default;
 $input-disabled-color: rgba(0,0,0, .26) !default;
 $input-disabled-solid-color: #BDBDBD !default;
 
@@ -64,7 +64,7 @@ body { font-family:'나눔고딕'; }
 .devise_block {
   padding: 2em;
   border-radius: 1em;
-  background-color: rgba(246, 162, 173, 0.3);
+  background-color: rgba(246, 162, 173, 0.2);
 }
 
 .arrow-down {
