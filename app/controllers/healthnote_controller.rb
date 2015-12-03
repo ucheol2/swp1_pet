@@ -2,19 +2,19 @@ class HealthnoteController < ApplicationController
       # 건강수첩 페이지가 로그인한 유저에게만 보이도록
     before_action :authenticate_user!
     
-    def index #index 페이지
+    def index #index 페이지 # 진료기록 검색기능 추가
         if params[:irum]
-           @healthnote = []
+           @healthnote = [] 
            Healthnote.all.each do |item|
-               if item.content.include? params[:irum] 
-                   @healthnote << item
+               if item.content.include? params[:irum] # 아이템이 검색어를 포함한다면
+                   @healthnote << item # 아이템을 healthnote 어레이에 담는당
                end
            end
         else
-            @healthnote = Healthnote.all
+            @healthnote = Healthnote.all # 아이템이 검색어를 포함하지 않으면 그냥 전체 진료기록 출력
         end
 
-        @healthnote = current_user.healthnotes
+        @healthnote = current_user.healthnotes # 로그인한 이용자 계정에 해당하는 진료기록만 출력
 
     end
     

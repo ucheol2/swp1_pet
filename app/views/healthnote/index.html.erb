@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @healthnote.each do |item| %>
+      <% @healthnotes.each do |item| %>
         <tr>
           <td><%= item.order %></td>
           <td><%= item.content %></td>
@@ -24,7 +24,6 @@
           <td><a href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
         </tr>  
       <% end %>
-<<<<<<< HEAD
       <tr>
         <td>1</td>
         <td>심장사상충 예방접종</td>
@@ -34,21 +33,16 @@
         <td></td>        
         <td></td>        
         </tr>
-=======
->>>>>>> 9362475b21408acef4b2fc6e3c51fd7243567d1b
     </tbody>
   </table>
 <br></br>
 
-<<<<<<< HEAD
 <form action='/healthnote/index'>
     <input type="text" name="irum" placeholder="검색"><a class="btn-flat">검색</a>
 </form>
 
 <a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
 
-=======
-<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
 
 <!-- 그래프 폐기
 <div class="row">
@@ -95,4 +89,3 @@ $( document ).ready(function(){
 });
 </script>
 -->
->>>>>>> 9362475b21408acef4b2fc6e3c51fd7243567d1b
