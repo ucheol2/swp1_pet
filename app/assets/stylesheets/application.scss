@@ -43,7 +43,14 @@ $radio-empty-color: #5a5a5a !default;
 @import "materialize";
 
 
-body { font-family:'나눔고딕'; } 
+body { 
+  font-family:'나눔고딕'; 
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+} 
+
+
 
 .index_menu i {
   font-size: 10rem;
