@@ -1,6 +1,7 @@
-<h2>건강 수첩</h2>
-
-<h4>멍냥 의료정보에 대해서 기록해주세요.</h4>
+<div class="center">
+  <h2>건강 수첩</h2>
+  <h4>멍냥 의료정보에 대해서 기록해주세요.</h4>
+</div>
 <% if current_user.pets.empty? %>
   <div class="center" style="margin: 6rem;">
     <h1>건강 수첩은 멍냥 프로필을 작성 후 사용하실 수 있습니다</h1>
@@ -25,8 +26,4 @@
     <% end %>
   </div>
 <% end %>
-
-<a class="waves-effect waves-light btn" href="/healthnote/input"><i class="material-icons left">pets</i>추가</a>
-<a class="waves-effect waves-light btn" href="/healthnote/note"><i class="material-icons left">pets</i>테스트</a>
-
 

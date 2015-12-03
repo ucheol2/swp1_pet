@@ -34,9 +34,7 @@ class HealthnoteController < ApplicationController
     end
     
     def update
-
         Healthnote.find(params[:id].to_i).update(order: params[:order], content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
-
         redirect_to "/healthnote/index"
     end
     

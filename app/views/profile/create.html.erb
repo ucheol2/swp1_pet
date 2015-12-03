@@ -49,29 +49,26 @@
 </form>
 
 <script>
-function previewFile() {
-  var preview = document.querySelector('img');
-  var file    = document.querySelector('input[type=file]').files[0];
-  var reader  = new FileReader();
-
-  reader.onloadend = function () {
-    preview.src = reader.result;
+$(document).ready(function(){
+  function previewFile() {
+    var preview = document.querySelector('img');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+  
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+  
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
   }
-
-  if (file) {
-    reader.readAsDataURL(file);
-  } else {
-    preview.src = "";
-  }
-}
-<<<<<<< HEAD
-
-$('.datepicker').pickadate({
-  selectMonths: true, // Creates a dropdown to control month
-  selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
-       
+  
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+});
 </script>
-=======
-</script>
->>>>>>> e0b7a79651a466a769a7b9ac3326a00650fd1cd8
