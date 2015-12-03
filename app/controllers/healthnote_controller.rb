@@ -1,7 +1,6 @@
 class HealthnoteController < ApplicationController
       # 건강수첩 페이지가 로그인한 유저에게만 보이도록
     before_action :authenticate_user!
-<<<<<<< HEAD
     
     def index #index 페이지 # 진료기록 검색기능 추가
         @my_pets = current_user.pets
