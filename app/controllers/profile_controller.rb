@@ -38,7 +38,11 @@ class ProfileController < ApplicationController
     def destroy
         pp = Pet.find(params[:id].to_i)
         pp.destroy
-        redirect_to '/profile/pet_list'
+        if current_user.pets.count > 0    
+            redirect_to '/profile/pet_list'
+        else 
+            redirect_to '/profile/index'
+        end    
     end    
     
 end
