@@ -18,7 +18,7 @@ class ProfileController < ApplicationController
     def create_pet
 
         Pet.create(user: current_user, name: params[:name], gender: params[:gender], birth: params[:birth], about: params[:about], img: params[:img])
-        redirect_to '/profile/pet_list'
+        redirect_to params[:prev_uri]
     end
     
     def edit
@@ -39,7 +39,11 @@ class ProfileController < ApplicationController
     def destroy
         pp = Pet.find(params[:id].to_i)
         pp.destroy
-        redirect_to '/profile/pet_list'
+        if current_user.pets.count > 0    
+            redirect_to '/profile/pet_list'
+        else 
+            redirect_to '/profile/index'
+        end    
     end    
     
 end
