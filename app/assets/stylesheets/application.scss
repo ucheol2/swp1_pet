@@ -14,6 +14,35 @@
  *= require_self
  */
  
+@import "materialize/components/color";
+
+//*** Colors ***//
+$primary-color: #ee6e73 !default;  //rgb(238, 110, 115)//
+$secondary-color: #f6a2ad !default; //rgb(246, 162, 173)//
+$success-color: #ee6e73 !default;
+$error-color: color("red", "base") !default;
+$link-color: color("light-blue", "darken-1") !default;
+$accent-color: color("pink", "accent-r")!default;
+
+/*** Forms ***/
+// Text Inputs + Textarea
+
+$input-border-color: color("grey", "base") !default;
+$input-bg-color: #fff !default;
+$input-error-color: $error-color !default;
+$input-success-color: $success-color !default;
+$input-focus-color: $secondary-color !default;
+$label-font-size: .8rem !default;
+$input-disabled-color: rgba(0,0,0, .26) !default;
+$input-disabled-solid-color: #BDBDBD !default;
+
+// Radio Buttons
+$radio-fill-color: $secondary-color !default;
+$radio-empty-color: #5a5a5a !default;
+
+@import "materialize";
+
+
 body { font-family:'나눔고딕'; } 
 
 .index_menu i {
@@ -29,13 +58,13 @@ body { font-family:'나눔고딕'; }
   transition: background 0.4s linear;
 }
 .index_menu a:hover {
-  background-color: rgba(238, 110, 115, 0.3);
+ background-color: rgba(238, 110, 115, 0.3);
 }
 
 .devise_block {
-  background-color: rgba(246, 162, 173, 0.3);
   padding: 2em;
   border-radius: 1em;
+  background-color: rgba(246, 162, 173, 0.3);
 }
 
 .arrow-down {
@@ -44,8 +73,7 @@ body { font-family:'나눔고딕'; }
 	height: 0; 
 	border-left: 30px solid transparent;
 	border-right: 30px solid transparent;
-	
-	border-top: 30px solid rgb(238, 110, 115);
+	border-top: 30px solid $secondary-color;
 }
 
 h1,
@@ -57,17 +85,7 @@ h6 {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
-    color: rgb(238,110,115);
+    color: $primary-color;
+   
 }
 
-.btn {
-    background-color: rgb(239, 154, 154);
-}
-
-.card-panel{
-  background-color: rgb(239, 154, 154);
-}
-
-.radio:after{
-  background-color: rgb(238, 154, 154);
-}
