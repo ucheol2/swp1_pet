@@ -10,8 +10,9 @@ class HealthnoteController < ApplicationController
     end
     
     def create
-        Healthnote.create(pet: Pet.find(params[:id].to_i), order: current_user.healthnotes.count+1, content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
-        redirect_to "/healthnote/index"
+        pet = Pet.find(params[:pet_id].to_i)
+        Healthnote.create(pet: pet, order: pet.healthnotes.count+1, content: params[:content], date: params[:date], hospital: params[:hospital], etc: params[:etc])
+        redirect_to "/healthnote/note_detail/#{pet.id}"
     end
     
     def delete

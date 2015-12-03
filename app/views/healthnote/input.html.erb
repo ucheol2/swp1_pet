@@ -1,6 +1,7 @@
 <h3>멍냥 진료 및 치료 기록을 입력해주세요.</h3>
 <div class="row">
   <form action="/healthnote/create" class="col s12">
+    <input type="hidden" name="pet_id" value="<%= params[:id] %>">
     <div class="row">
       <div class="input-field col s12">
         <i class="material-icons prefix">pets</i>
