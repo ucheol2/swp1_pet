@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <div class="center-align">
-<p>
-  <strong>제목:</strong>
+<div class="row">
+<div class="card-panel hoverable">
+
+            
+<p><h3>
   <%= @post.title %>
-</p>
+</h3></p>
 
 <p>
-  <strong>내용:</strong>
   <%= @post.content %>
 </p>
 <p>
@@ -16,14 +18,15 @@
   </div>
 </p>
 
-<p>
-  <strong>게시자:</strong>
-  <%= @post.name %>
-</p>
 </div>
+
+          </div>
+        </div>
+      </div>
+
 
 
 <div class="center-align">
-<a class="waves-effect waves-light btn"<%= link_to '수정', edit_post_path(@post) %> 
-<a class="waves-effect waves-light btn"<%= link_to '목록으로', posts_path %>
+<a class="waves-effect waves-teal btn-flat"<%= link_to '수정', edit_post_path(@post) %> |
+<a class="waves-effect waves-teal btn-flat"<%= link_to '목록으로', posts_path %>
 </div>

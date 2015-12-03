@@ -1,18 +1,20 @@
 <%= form_tag "/profile/create_pet", multipart: true %>
-   
-   <div class="form-group">
-    <label for="profile_picture">프로필 사진 업로드</label>
-    <input type="file" id="profile_picture" name="img">
-    <p class="help-block">멍냥이 프로필 사진을 업로드해주세요~^^</p>
-  </div>
+<div class="container">
+  <h2>멍냥이 프로필을 작성해 주세요.</h2> 
+  
+  <div class="devise_block">
+    <div class="field">
+      <label for="profile_picture">프로필 사진 업로드</label>
+      <input type="file" id="profile_picture" name="img">
+      <p class="help-block">멍냥이 프로필 사진을 업로드해주세요~^^</p>
+    </div>
 
-   <div class="form-group">
-  <div class="form-group">
-    <label for="exampleInputName">이름</label>
-    <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="ex. 딩딩이">
-  </div>
+    <div class="field">
+      <label for="exampleInputName">이름</label>
+      <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="ex. 딩딩이">
+    </div>
 
-  <div class="form-group">
+    <div class="field">
       <label for="exampleInputGender">성별</label><br>    
       <input name="gender" type="radio" id="type1" value="여" />
       <label for="type1">여</label>
@@ -22,18 +24,19 @@
       <label for="type3">중성화(여)</label>
       <input name="gender" type="radio" id="type4" value="중성화(남)" />
       <label for="type4">중성화(남)</label>
-  </div>
+    </div>
   
-  <div class="form-group">
-    <label for="exampleInputage">나이</label>
-    <input type="text" class="form-control" id="exampleInputage" name="age" placeholder="ex. 3살, 6개월">
-  </div>
+    <div class="field">
+      <label for="exampleInputage">나이</label>
+      <input type="text" class="form-control" id="exampleInputage" name="age" placeholder="ex. 3살, 6개월">
+    </div>
   
-  <div class="form-group">
-    <label for="introduction">멍냥소개</label>
-    <textarea class="form-control" name="about" rows="5"></textarea>
-  </div>
+    <div class="field">
+      <label for="introduction">멍냥소개</label>
+      <textarea class="form-control" style="background-color: white;" name="about" rows="15"></textarea>
+    </div>
  
-<button type="submit" class="btn btn-default">저장</button>
-
+    <button type="submit" class="btn btn-default">저장</button>
+  </div>
+  
 </form>

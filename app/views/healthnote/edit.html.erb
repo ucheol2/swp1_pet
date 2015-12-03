@@ -1,31 +1,31 @@
 <h3>기록 편집</h3>
 
   <div class="row">
-    <form action="/healthnote/create" class="col s12">
+    <form action="/healthnote/update/<%= @Healthnote.id %>" class="col s12">
       <div class="row">
         <div class="input-field col s6">
           <i class="material-icons prefix">add</i>
-          <input id="icon_prefix" name="order" type="intger" class="validate">
+          <input id="icon_prefix" name="order" type="intger" class="validate" value="<%=@Healthnote.order%>">
           <label for="icon_prefix">번호</label>
         </div>  
         <div class="input-field col s6">
           <i class="material-icons prefix">pets</i>
-          <input id="icon_prefix" name="content" type="text" class="validate">
+          <input id="icon_prefix" name="content" type="text" class="validate" value="<%=@Healthnote.content%>">
           <label for="icon_prefix">진료내용</label>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">today</i>
-          <input id="icon_telephone" name="date" type="tel" class="validate">
+          <input id="icon_telephone" name="date" type="tel" class="validate"value="<%=@Healthnote.date%>">
           <label for="icon_telephone">날짜</label>
         </div>
         <div class="input-field col s6">
           <i class="material-icons prefix">local_hospital</i>
-          <input id="icon_telephone" name="hospital" type="tel" class="validate">
+          <input id="icon_telephone" name="hospital" type="tel" class="validate" value="<%=@Healthnote.hospital%>">
           <label for="icon_telephone">동물병원</label>
         </div>  
         <div class="input-field col s6">
           <i class="material-icons prefix">mode_edit</i>
-          <input id="icon_telephone" name="etc" type="tel" class="validate">
+          <input id="icon_telephone" name="etc" type="tel" class="validate" value="<%=@Healthnote.etc%>">
           <label for="icon_telephone">비고</label>
          </div>
         </div>
