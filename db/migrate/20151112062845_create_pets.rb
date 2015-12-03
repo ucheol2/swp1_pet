@@ -4,7 +4,7 @@ class CreatePets < ActiveRecord::Migration
       t.integer :user_id
       
       t.string :name
-      t.integer :age
+      t.string :birth
       t.string :gender
       t.string :img
       t.text :about

@@ -16,7 +16,7 @@ class ProfileController < ApplicationController
     end
     
     def create_pet
-        Pet.create(user: current_user, name: params[:name], gender: params[:gender], age: params[:age], about: params[:about], img: params[:img])
+        Pet.create(user: current_user, name: params[:name], gender: params[:gender], birth: params[:birth], about: params[:about], img: params[:img])
         redirect_to '/profile/pet_list'
     end
     
@@ -28,7 +28,7 @@ class ProfileController < ApplicationController
         pp = Pet.find(params[:id])
         pp.name = params[:name]
         pp.gender = params[:gender]
-        pp.age = params[:age]
+        pp.birth = params[:birth]
         pp.about = params[:about]
         pp.img =params[:img]
         pp.save

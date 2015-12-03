@@ -1,9 +1,20 @@
 <% current_user.pets.each do |item| %>
-<img src="<%= item.img.url %>">
-<h5>이름: <%=item.name%></h5><br>
-<h5>성별: <%=item.gender%></h5><br>
-<h5>나이: <%=item.age%></h5><br>
-<h5>소개 :<%=item.about%></h5><br>
+
+<div class="devise_block">
+    <div class="profile_picture">
+        <img src="<%= item.img.url %>" height="200">
+    </div>    
+    
+    <div>
+        
+    </div>
+    
+이름: <%=item.name%><br>
+성별: <%=item.gender%><br>
+생일: <%=Time.parse(item.birth).strftime("%Y:%M %d")%><br>
+소개 :<%=item.about%><br>
+</div>
+
 <a href="/profile/edit/<%= item.id %>"><button>수정하기</button></a>
 <%= link_to '지우기','/profile/destroy/'+item.id.to_s, data: {confirm: "지우시겠습니까?"} %>
 
