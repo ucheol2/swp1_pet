@@ -1,12 +1,17 @@
+
 <%= form_tag "/profile/create_pet", multipart: true %>
 <input type="hidden" name="prev_uri" value="<%= @prev_uri %>">
 <div class="container">
   <h2>멍냥이 프로필을 작성해 주세요.</h2> 
   
   <div class="devise_block">
+    <div class="preview">
+      <input type="file" id="profile_picture" name="img" onchange="previewFile()"><br>
+      <img src="" height="200" alt="Image preview...">
+    </div>
+    
     <div class="field">
       <label for="profile_picture">프로필 사진 업로드</label>
-      <input type="file" id="profile_picture" name="img">
       <p class="help-block">멍냥이 프로필 사진을 업로드해주세요~^^</p>
     </div>
 
@@ -41,3 +46,21 @@
   </div>
   
 </form>
+
+<script>
+function previewFile() {
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
+</script>
