@@ -5,7 +5,7 @@
   
   <div class="devise_block">
     <div class="field center-align">
-      <input type="file" id="profile_picture" name="img" onchange="previewFile()"><br>
+      <input type="file" id="profile_picture" name="img" onchange="previewFile()" required><br>
       <img src="http://cliparts.co/cliparts/6cy/Xjg/6cyXjgM9i.svg" height="200" alt="" >
     </div>
     
@@ -16,12 +16,12 @@
 
     <div class="field">
       <label for="exampleInputName">이름</label>
-      <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="ex. 딩딩이">
+      <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="ex. 딩딩이" required>
     </div>
 
     <div class="field">
       <label for="exampleInputGender">성별</label><br>    
-      <input name="gender" type="radio" id="type1" value="여" />
+      <input name="gender" type="radio" id="type1" value="여"/>
       <label for="type1">여</label>
       <input name="gender" type="radio" id="type2" value="남" />
       <label for="type2">남</label>
@@ -33,12 +33,12 @@
   
     <div class="field">
       <label for="exampleInputage">생일</label>
-      <input type="date" class="datepicker" id="exampleInputbirth" name="birth">
+      <input type="date" class="datepicker" id="exampleInputbirth" name="birth" required>
     </div>
   
     <div class="field">
       <label for="introduction">멍냥소개</label>
-      <textarea class="form-control" style="background-color: white;" name="about" rows="15"></textarea>
+      <textarea class="form-control" style="background-color: white;" name="about" rows="15" required></textarea>
     </div>
  
     <button type="submit" class="btn btn-default">저장</button>
