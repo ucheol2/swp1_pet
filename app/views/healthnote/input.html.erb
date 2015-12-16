@@ -1,31 +1,41 @@
-<h3>멍냥 진료 및 치료 기록을 입력해주세요.</h3>
-<div class="row">
-  <form action="/healthnote/create" class="col s12">
-    <input type="hidden" name="pet_id" value="<%= params[:id] %>">
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">pets</i>
-        <input id="icon_prefix" name="content" type="text" class="validate" required>
-        <label for="icon_prefix">진료내용</label>
+<div class="container">
+  <h3>멍냥 진료 및 치료 기록을 입력해주세요.</h3>
+  <div class="row devise_block">
+    <form action="/healthnote/create" class="col s12">
+      <input type="hidden" name="pet_id" value="<%= params[:id] %>">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">pets</i>
+          <input id="content" name="content" type="text" class="validate" required>
+          <label for="content">진료내용</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">today</i>
+          <input id="date" name="date" type="date" class="datepicker" class="validate" required>
+          <label for="date">날짜</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">local_hospital</i>
+          <input id="hospital" name="hospital" type="text" class="validate" required>
+          <label for="hospital">동물병원</label>
+        </div>  
+        <div class="input-field col s12">
+          <i class="material-icons prefix">mode_edit</i>
+          <textarea id="etc" class="materialize-textarea" name="etc"></textarea>
+          <label for="etc">비고</label>
+        </div>
+        <button class="btn pink waves-effect waves-light right" type="submit" name="action"><i class="material-icons left">pets</i>저장</button>
       </div>
-      <div class="input-field col s12">
-        <i class="material-icons prefix">today</i>
-        <input id="icon_telephone" name="date" type="tel" class="validate" required>
-        <label for="icon_telephone">날짜</label>
-      </div>
-      <div class="input-field col s12">
-        <i class="material-icons prefix">local_hospital</i>
-        <input id="icon_telephone" name="hospital" type="tel" class="validate" required>
-        <label for="icon_telephone">동물병원</label>
-      </div>  
-      <div class="input-field col s12">
-        <i class="material-icons prefix">mode_edit</i>
-        <input id="icon_telephone" name="etc" type="tel" class="validate">
-        <label for="icon_telephone">비고</label>
-      </div>
-      <button class="btn waves-effect waves-light" type="submit" name="action"><i class="material-icons left">pets</i>저장</button>
-    </div>
-  </form>
+    </form>
+  </div>
+  
 </div>
 
-</div>
+<script>
+$(document).ready(function(){
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+});
+</script>

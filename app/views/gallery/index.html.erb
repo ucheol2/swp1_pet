@@ -1,27 +1,28 @@
 <div class="row">
   <div class="col s10 offset-s1">
-    <h3 class="center-align">멍냥스타일</h3>
-    <hr>
-    <h4 class="right-align"><%= link_to "내 사진 등록/관리하기", posts_path %></h4>
-    <br>
-  
-    <div class="grid">
-      <% Post.all.each do |item| %>
-        <div class="style-post grid-item">
-          <img class='style-image' src="<%= item.img %>">
-        </div>
-      <% end %>
+    <div class="center" style="background-color: rgba( 255, 231, 234, 0.3 ); padding: 1em; margin-top: 3em;">
+      <h2>멍냥 스타일</h2>
+      <%= link_to "내 사진 등록/관리하기", posts_path, class: "btn-large pink waves-effect waves-light" %>
     </div>
-
+    
+    <div class="row" style="margin-top: 2em;">
+      <div class="col s12">
+        <div class="row">
+          <% Post.all.each do |item| %>
+            <div class="col s4 l3">
+              <div class="gallery_img card hoverable">
+                <div class="card-image">
+                  <img src="<%= item.img %>">
+                  <span class="card-title"><%= item.title %></span>
+                </div>
+                <div class="card-content">
+                  <p><%= item.content %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<script>
-$(document).ready(function(){
-  minigrid({
-    container: '.grid',
-    item: '.grid-item',
-    gutter: 6
-  });
-});
-</script>

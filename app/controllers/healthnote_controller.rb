@@ -45,13 +45,13 @@ class HealthnoteController < ApplicationController
             if params[:irum]
                 @healthnote = []
                 Healthnote.all.each do |item|
-                if item.content.include? params[:irum] 
-                    @healthnote << item
+                    if item.content.include? params[:irum] 
+                        @healthnote << item
+                    end
                 end
-            end
             else
                 @healthnote = Pet.find(params[:id].to_i).healthnotes
-            end 
+            end
         end
     end
 end

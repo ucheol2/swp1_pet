@@ -33,6 +33,7 @@
   background-color: rgba(76, 175, 102, 0.29);
   padding: 2em;
   border-radius: 1em;
+  margin: 2em;
 }
 
 .arrow-down {
@@ -45,3 +46,15 @@
 	border-top: 30px solid rgb(244, 196, 202);
 }
 
+.profile_content {
+  margin-bottom: 0.7em;
+  font-weight: 600;
+}
+
+.profile_content span{
+  color: #6B6B6B;
+}
+
+.gallery_img{
+  width: 100%;
+}

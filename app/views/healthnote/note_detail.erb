@@ -18,8 +18,8 @@
             <td><%= item.date %></td>
             <td><%= item.hospital %></td>
             <td><%= item.etc %></td>
-            <td><%= link_to 'X', "/healthnote/delete/" + item.id.to_s, data: { confirm: '정말 삭제하시겠습니까?' } %></td>
-            <td><a href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
+            <td><%= link_to '삭제', "/healthnote/delete/" + item.id.to_s, data: { confirm: '정말 삭제하시겠습니까?' }, class: "pink-text" %></td>
+            <td><a class="pink-text" href="/healthnote/edit/<%=item.id.to_s%>">수정</a></td>
           </tr>  
         <% end %>
       </tbody>
@@ -27,13 +27,15 @@
     
     <br></br>
     
-    <a class="waves-effect waves-light btn" href="/healthnote/input/<%= params[:id] %>"><i class="material-icons left">pets</i>추가</a>
+    <a class="right btn pink waves-effect waves-light" href="/healthnote/input/<%= params[:id] %>"><i class="material-icons left">pets</i>추가</a>
     
     <br></br>
     
-    <form action='/healthnote/index'>
-        <input type="text" name="irum" placeholder="검색어를 입력하세요."><a class="waves-effect waves-light btn"><i class="material-icons left">search</i>검색</a>
+    <form action="/healthnote/note_detail/<%= params[:id] %>" id="health_search">
+      <input id="irum" type="text" name="irum" placeholder="검색어를 입력하세요.">
+      <button class="right btn pink waves-effect waves-light" type="submit" name="action">검색
+        <i class="material-icons right">search</i>
+      </button>
     </form>
-    
   </div>
 </div>

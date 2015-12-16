@@ -4,9 +4,15 @@
   <h2>멍냥이 프로필을 작성해 주세요.</h2> 
   
   <div class="devise_block">
-    <div class="field center-align">
-      <input type="file" id="profile_picture" name="img" onchange="previewFile()" required><br>
-      <img src="http://cliparts.co/cliparts/6cy/Xjg/6cyXjgM9i.svg" height="200" alt="" >
+    <div class="center file-field input-field">
+      <div class="btn">
+        <span>사진</span>
+        <input type="file" id="profile_picture" name="img" onchange="previewFile()" accept="image/*" required><br>
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+      <img id="blah" src="http://cliparts.co/cliparts/6cy/Xjg/6cyXjgM9i.svg" height="200" alt="" >
     </div>
     
     <div class="field center-align">
@@ -14,12 +20,12 @@
       <p class="help-block center-align">멍냥이 프로필 사진을 업로드해주세요~^^</p>
     </div>
 
-    <div class="field">
+    <div class="input-field">
       <label for="exampleInputName">이름</label>
       <input type="text" class="form-control" id="exampleInputName" name="name" placeholder="ex. 딩딩이" required>
     </div>
 
-    <div class="field">
+    <div class="input-field">
       <label for="exampleInputGender">성별</label><br>    
       <input name="gender" type="radio" id="type1" value="여"/>
       <label for="type1">여</label>
@@ -30,15 +36,16 @@
       <input name="gender" type="radio" id="type4" value="중성화(남)" />
       <label for="type4">중성화(남)</label>
     </div>
+    <br>
   
-    <div class="field">
+    <div class="input-field">
       <label for="exampleInputage">생일</label>
       <input type="date" class="datepicker" id="exampleInputbirth" name="birth" required>
     </div>
   
-    <div class="field">
-      <label for="introduction">멍냥소개</label>
-      <textarea class="form-control" style="background-color: white;" name="about" rows="15" required></textarea>
+    <div class="input-field">
+      <textarea id="about" class="materialize-textarea form-control" name="about" rows="15" required></textarea>
+      <label for="about">멍냥소개</label>
     </div>
  
     <button type="submit" class="btn btn-default">저장</button>
@@ -67,6 +74,21 @@ $(document).ready(function(){
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
-    });
+  });
+  
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      
+      reader.onload = function (e) {
+        $('#blah').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  
+  $("#profile_picture").change(function(){
+    readURL(this);
+  });
 });
 </script>

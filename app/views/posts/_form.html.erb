@@ -1,48 +1,70 @@
 <div class="row">
-<div class="col s6 offset-s3">
-
-<%= form_for(@post) do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  <div class="col s6 offset-s3">
+  
+    <%= form_for(@post) do |f| %>
+      <% if @post.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    
+          <ul>
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  
-  <div class="field">
-    <%= f.label :제목 %><br>
-    <%= f.text_field :title %>
-  </div>
-  <br>
-  
-  <div class="field">
-    <%= f.label :내용 %><br>
-    <%= f.text_area :content %>
-  </div>
-  <br>
-  
-  <form action="#">
-    <div class="file-field input-field">
-      <div class="btn">
-        <span>Photo</span>
-        <%= f.file_field :img %>
+      
+      <div class="input-field">
+        <%= f.label :제목 %><br>
+        <%= f.text_field :title %>
       </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload one or more files">
+      <br>
+      
+      <div class="input-field">
+        <%= f.label :내용 %><br>
+        <%= f.text_area :content, class: "materialize-textarea" %>
       </div>
-    </div>
-<br>
+      <br>
+      
+      <div class="file-field input-field">
+        <div class="btn pink">
+          <span>사진</span>
+          <%= f.file_field :img %>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text" placeholder="Upload one or more files">
+        </div>
+      </div>
+      <div class="center">
+        <img id="blah" src="http://cliparts.co/cliparts/6cy/Xjg/6cyXjgM9i.svg" height="200" alt="" >
+      </div>
+      <br>
+    
+      <div class="center-align">
+        <button class="btn pink waves-effect waves-light" type="submit" name="action">저장하기
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
 
-<div class="center-align">
-  <button class="btn waves-effect waves-light" type="submit" name="action">저장하기
-    <i class="material-icons right">send</i>
-  </button>
-  </div>
+<script>
+$(document).ready(function(){
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      
+      reader.onload = function (e) {
+        $('#blah').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
   
-<% end %>
-</div></div>
+  $("#post_img").change(function(){
+    readURL(this);
+  });
+});
+</script>
