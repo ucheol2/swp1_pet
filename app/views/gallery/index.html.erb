@@ -12,7 +12,7 @@
             <div class="col s4 l3">
               <div class="gallery_img card hoverable blue lighten-4">
                 <div class="card-image">
-                  <img src="<%= item.img %>">
+                  <a class="modal-trigger" href="#post_img<%= item.id %>" ><img src="<%= item.img %>"></a>
                   <span class="card-title"><%= item.title %></span>
                 </div>
                 <div class="card-content">
@@ -28,6 +28,12 @@
                     <span class="right like_cnt" id="post_cnt<%= item.id %>"><%= item.like %></span></p>
                   <% end %>
                 </div>
+              </div>
+            </div>
+            
+            <div id="post_img<%= item.id %>" class="modal">
+              <div class="modal-content">
+                <img src="<%= item.img %>" style="max-height: 100%; max-width: 100%;">
               </div>
             </div>
           <% end %>
@@ -75,6 +81,11 @@ $(document).ready(function(){
       }
     });
   })
+  
+  $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
   
 });
 </script>
