@@ -76,17 +76,6 @@
   margin: auto;
 }
 
-#gallery_row > div {
-  -webkit-box-shadow: 0 4px 15px -5px #555;
-  box-shadow: 0 4px 15px -5px #555;
-  background-color: #fff;
-  width: 220px;
-  padding: 2px;
-  margin: 5px;
-}
-
-#gallery_row > div img {
-  padding: 0px;
-  display: block;
-  width: 100%;
+.gallery_col {
+  width: 25%;
 }
