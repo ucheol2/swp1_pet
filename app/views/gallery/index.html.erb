@@ -17,10 +17,10 @@
                 </div>
                 <div class="card-content">
                   <p><%= item.content %></p>
-                  <% if user_signed_in? && UserPost.where(user: current_user, post: item ).take %>
+                  <% if user_signed_in? %>
                     <br>
                     <p class="like_p">
-                    <% if UserPost.where(user: current_user, post: item ).take.liked %>
+                    <% if UserPost.where(user: current_user, post: item ).take and UserPost.where(user: current_user, post: item ).take.liked %>
                       <i class="right unlike_btn material-icons pink-text" post_id="<%= item.id %>">thumb_up</i>
                     <% else %>
                       <i class="right like_btn material-icons grey-text" post_id="<%= item.id %>">thumb_up</i>
