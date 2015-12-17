@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'like/processing'
+
   resources :posts
   devise_for :users, controllers:{
     registrations: 'users/registrations'

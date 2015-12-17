@@ -58,3 +58,15 @@
 .gallery_img{
   width: 100%;
 }
+
+.like_btn {
+  cursor: pointer;
+}
+
+.unlike_btn {
+  cursor: pointer;
+}
+
+.like_p {
+  margin-bottom: 1em !important;
+}

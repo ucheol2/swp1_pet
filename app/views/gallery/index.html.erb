@@ -10,13 +10,23 @@
         <div class="row">
           <% Post.all.each do |item| %>
             <div class="col s4 l3">
-              <div class="gallery_img card hoverable">
+              <div class="gallery_img card hoverable blue lighten-4">
                 <div class="card-image">
                   <img src="<%= item.img %>">
                   <span class="card-title"><%= item.title %></span>
                 </div>
                 <div class="card-content">
                   <p><%= item.content %></p>
+                  <% if user_signed_in? %>
+                    <br>
+                    <p class="like_p">
+                    <% if UserPost.where(user: current_user, post: item ).take.liked %>
+                      <i class="right unlike_btn material-icons pink-text" post_id="<%= item.id %>">thumb_up</i>
+                    <% else %>
+                      <i class="right like_btn material-icons grey-text" post_id="<%= item.id %>">thumb_up</i>
+                    <% end %>
+                    <span class="right like_cnt" id="post_cnt<%= item.id %>"><%= item.like %></span></p>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -26,3 +36,45 @@
     </div>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  
+  $(document).on('click', '.like_btn', function(){
+    btn = this
+    $.ajax({
+      url: '/like/processing',
+      dataType: 'json',
+      data: {
+        post_id: $(this).attr("post_id")
+      },
+      success: function(data){
+        $("#post_cnt"+data.id).text(data.like)
+        $(btn).removeClass("like_btn")
+        $(btn).removeClass("grey-text")
+        $(btn).addClass("unlike_btn")
+        $(btn).addClass("pink-text")
+      }
+    });
+  })
+  
+  $(document).on('click', '.unlike_btn', function(){
+    btn = this
+    $.ajax({
+      url: '/like/deprocessing',
+      dataType: 'json',
+      data: {
+        post_id: $(this).attr("post_id")
+      },
+      success: function(data){
+        $("#post_cnt"+data.id).text(data.like)
+        $(btn).removeClass("unlike_btn")
+        $(btn).removeClass("pink-text")
+        $(btn).addClass("like_btn")
+        $(btn).addClass("grey-text")
+      }
+    });
+  })
+  
+});
+</script>

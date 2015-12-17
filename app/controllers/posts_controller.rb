@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.where(user_posts: {owned: true})
   end
 
   # GET /posts/1
@@ -25,8 +25,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    
-    @post.update(user: current_user)
+    UserPost.create(user: current_user, post: @post, owned: true)
 
     respond_to do |format|
       if @post.save

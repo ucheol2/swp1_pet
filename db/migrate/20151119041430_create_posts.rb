@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :name
       t.string :title
       t.text :content
+      t.integer :like, default: 0
 
       t.timestamps null: false
     end
