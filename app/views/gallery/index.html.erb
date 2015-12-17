@@ -7,9 +7,9 @@
     
     <div class="row" style="margin-top: 2em;">
       <div class="col s12">
-        <div class="gallery_row">
+        <div class="row">
           <% Post.all.reverse.each do |item| %>
-            <div class="gallery_col">
+            <div class="col s4 l3">
               <div class="gallery_img card hoverable blue lighten-4">
                 <a class="modal-trigger" href="#post_img<%= item.id %>" >
                   <div class="card-image">
@@ -89,8 +89,6 @@ $(document).ready(function(){
     $('.modal-trigger').leanModal();
   });
   
-  $('#container').pinto();
-
 });
 </script>
 
